@@ -1,0 +1,18 @@
+:root {
+  font-family: "Inter", sans-serif;;
+  --red : #E21F26;
+  --grey : #797979;
+  --blue : #eef4ff;
+  --green : #00CE56;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body{
+  min-height: 100vh;
+}

@@ -1,0 +1,34 @@
+.whatsapp_wrapper{
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    height: 5rem;
+    width: 5rem;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* BLURRED BACKGROUND LAYER */
+.whatsapp_wrapper::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+
+    background: rgba(37, 211, 102, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    z-index: -1;
+}
+
+/* ICON */
+.whatsapp_wrapper img{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    z-index: 1;
+}
