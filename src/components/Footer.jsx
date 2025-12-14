@@ -8,13 +8,13 @@ export default function Footer() {
       <div className="footer_top">
 
         <div className="footer_brand">
-          <h3>HDFC ERGO Health Insurance Advisor</h3>
+          <h3>HDFC ERGO Health Insurance</h3>
           <p>Ayodhya & Faizabad, Uttar Pradesh</p>
         </div>
 
         <div className="footer_legal">
           <p>
-            This website is owned and operated by an authorized insurance advisor.
+            This website is owned and operated by Rahul Pandey an Assistant Agency Manager.
             It is not an official website of HDFC ERGO General Insurance Company Ltd.
           </p>
         </div>

@@ -27,7 +27,7 @@ export default function Testimonials(){
         <>
 
         <div className="testimonial_container">
-            <div className="testi_title">Trusted by Families Across Uttar Pradesh</div>
+            <div className="testi_title">Trusted by Families Across India</div>
             <div className="testi_subtitle">
             Real experiences from customers who secured their family’s future with us.
             </div>
