@@ -4,11 +4,18 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { useState } from "react";
 import { FaTelegramPlane } from "react-icons/fa";
 
+import emailjs from "@emailjs/browser";
+
+
 import toast from "react-hot-toast";
 
 
 
 export default function Home(){
+
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     const [formData, setFormData ] = useState({
         fullName : "",
@@ -17,36 +24,46 @@ export default function Home(){
         city : ""
     })
 
-    function handle_Form(e){
-        console.log("Form Submitted successfully")
+    function handle_Form(e) {
         e.preventDefault();
 
-        let { fullName, phoneNumber, age, city } = formData
+        const { fullName, phoneNumber, age, city } = formData;
 
-        if( fullName.length == 0 ||
+        if (
+            fullName.length === 0 ||
             phoneNumber.length < 7 || phoneNumber.length > 15 ||
-            age <0 || age > 100 || city.length == 0
-        ){
-            toast.error("Please Provide All the Details")
-            return
+            age <= 0 || age > 100 ||
+            city.length === 0
+        ) {
+            toast.error("Please Provide All the Details");
+            return;
         }
 
-        setFormData({
-            fullName : "",
-            phoneNumber : "",
-            age : "",
-            city : ""
-        })
+        const templateParams = {
+            full_name: fullName,
+            phone: phoneNumber,
+            age: age,
+            city: city,
+        };
 
-        toast.success("Form Submitted Successfully")
+        emailjs
+            .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+            .then(() => {
+                toast.success("Form Submitted Successfully");
 
-        console.log(formData)
+                setFormData({
+                    fullName: "",
+                    phoneNumber: "",
+                    age: "",
+                    city: ""
+                });
+            })
+            .catch((error) => {
+                console.error("EmailJS Error:", error);
+                toast.error("Something went wrong. Try again.");
+            });
+}
 
-        console.log("\nEnd of form Handling\n")
-
-       
-
-    }
 
     function handle_values_change(e){
         setFormData( (prev)=>{ return (
@@ -83,8 +100,8 @@ export default function Home(){
 
                 <div className="home_btn">
 
-                    <a href="#contact" className="btn btn_left" >Get Free Quote</a>
-                    <a href="#contact" className="btn btn_right">
+                    <a href="#reviews" className="btn btn_left" >What Customers Say</a>
+                    <a href="#viewplans" className="btn btn_right">
                         <span> View Plans </span> 
                         <span className="btn_right_icon" > <FaArrowRightLong /> </span>
                     </a>
