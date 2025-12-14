@@ -20,9 +20,9 @@ export default function Navbar(){
             </div>
             <div className="navbar_right">
 
-                <a href="#About">About</a>
-                <a href="#Plans" >Health Plans</a>
-                <a href="#Review">Reviews</a>
+                <a href="#about">About</a>
+                <a href="#viewplans" >Health Plans</a>
+                <a href="#reviews">Reviews</a>
                 <div className="call_now_btn" >
                     <a href="tel:+918652339403" className="call_now_btn_a_tag">
                         <span> < IoCallOutline color="white" size={20} /></span>

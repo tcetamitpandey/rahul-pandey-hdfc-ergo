@@ -48,6 +48,13 @@
    BOTTOM BAR
 ====================== */
 
+
+.footer_bottom a{
+    cursor: pointer;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--red);
+}
+
 .footer_bottom {
     display: flex;
     justify-content: space-between;

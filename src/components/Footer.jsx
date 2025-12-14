@@ -28,15 +28,14 @@ export default function Footer() {
           respective policy documents issued by HDFC ERGO General Insurance Company Ltd.
         </p>
 
-        <p>
-          IRDAI Registration No: XXXXXXX | License valid till: DD/MM/YYYY
-        </p>
       </div>
 
       <div className="footer_bottom">
         <span>© 2025 Rahul Pandey. All rights reserved.</span>
         <span>
-          Made with <FaHeart className="footer_heart" /> by Amit Pandey
+          Made with <FaHeart className="footer_heart" /> by <a style={{color:"#94a3b8"}} href="https://www.linkedin.com/in/amit-pandey-tcet" target="_blank" rel="noopener noreferrer">
+            &nbsp;Amit Pandey
+          </a>
         </span>
       </div>
 
